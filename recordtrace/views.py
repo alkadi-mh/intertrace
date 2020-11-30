@@ -14,6 +14,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.template.defaultfilters import slugify
 from django.db.models.loading import get_model
+#from django.apps import apps
+
+
 
 from recordtrace.models import Session, Event, Metadata
 
@@ -24,7 +27,7 @@ from django.http import StreamingHttpResponse
 
 #logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
+#apps.get_model('Model')
 
 class Echo(object):
     #"""An object that implements just the write method of the file-like
@@ -409,6 +412,7 @@ def read_trace(request):
             insert(f2)
 
 def decode(msg):
+    msg=msg.decode('cp1252')
     if msg[0]=='{' or msg[0]=='[':
         logger.debug('Found json format')
         return json.loads(msg)

@@ -83,8 +83,7 @@ def make_settings():
         secret_key = generate_secret_key()
         with lcd(PROJ_ROOT):
             for line in fileinput.input(settings_file, inplace=True):
-                print line.replace("SECRET_KEY = ''",
-                                   "SECRET_KEY = '{}'".format(secret_key)),
+                print (line.replace("SECRET_KEY = ''","SECRET_KEY = '{}'".format(secret_key)))
 
 def get_db_tables():
     tables = local('{python} manage.py inspectdb | '
