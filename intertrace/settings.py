@@ -1,4 +1,4 @@
-# Django settings for intertrace project.
+#= Django settings for intertrace project.
 
 
 
@@ -57342,7 +57342,7 @@ DATABASES = {
 
 
 
-ALLOWED_HOSTS = [ "localhost" ]
+ALLOWED_HOSTS = [ "localhost","68.183.41.141" ]
 
 
 

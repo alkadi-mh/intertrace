@@ -58,8 +58,7 @@ def migrate():
 def create_superuser():
     username = prompt('Username: ', validate=str)
     if username:
-        local('{python} manage.py createsuperuser --username {username}'.format(
-            username=username, **env))
+        local('{python} manage.py createsuperuser --username {username}'.format(username=username,**env))
 
 @task
 def runserver():
